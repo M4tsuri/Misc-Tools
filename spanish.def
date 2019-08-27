@@ -1,0 +1,94 @@
+# Password definition are below the '##' line
+
+#This is password definition file for PCL 2.0
+#for spanish language
+#This file causes "ambiguous conversion" warnings, it's ok.
+
+#Dictionary definition - only if $u and $w will be used
+#$w = "c:\\dict\\main.dic"    # '\' need to be shielded
+#$u = "user.dic"
+
+#Charsets definition
+#Predefined charsets
+#You even could change it - reorder, remove or insert chars,
+#but it doesn't affect .u and .l modifiers.
+
+#$a = [abcdefghijklmnopqrstuvwxyz]   #by default
+#$A = [ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+#$1 = [0123456789]
+
+#Here we add '®' and '≠' symbols.
+#Add others if you could type it on spanish keyboard 
+
+$! = [\{ \} : \" < > \? \[ \] ; ' , \. / ~ ! @ \# \$ % ^ & \* \( \) _ + ` - \= \\ | ® ≠] #take care with \\
+
+#Other charset (maybe pseudographic etc)
+$o = [ ]
+
+#National spanish charsets. Just simply, but
+#don't forget these definition define also .u and .l modifiers
+#for spanish letters.
+#These lines cause "ambiguous conversion" warning, it's ok.
+
+$i  = [§†Ç°¢£Å $a]
+$I  = [•AEIOUö $A]
+
+# Here metachar ? is equal to [$a $A $1 $! $i $I $o] and it must be
+#? = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}:"<>?[];',./~!@#$%^&*()_+`-=\|®≠§†Ç°¢£Å•ö
+#because if there are some identical letters, only first of them is added.
+
+#Convert modifiers .c definition. Any symbol in ? will be converted
+#to appropriate symbol of conversion string.
+#Up to 256 conversions may be defined.
+#As example here is conversion string which transforms
+#letters to similar digits and vice-versa.
+
+
+#?   = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}: "<>?[];',./~!@#$%^&*()_+`-= \|®≠§†Ç°¢£Å•ö"
+?.c(1)="abcdefghijk1mn0pqrstuvwxyzABCDEFGH1JKLMN0PQR5TUVWXYZOl234S6789{}:\"<>?[];',./~!@#$%^&*()_+`-=\\|"
+
+#Additional charsets
+#Charset to insert in permutational brackets
+
+#$p = []
+
+#Vowels are necessary for some modifiers
+
+$v = [aeiouyAEIOUY†Ç°¢£Åö]
+
+# End of charset definition
+#
+##
+# Here password definitions begins.
+#
+# Password definition
+#
+# Most common definition - brute-force search
+# using only lower-case Latin letters.
+$a *
+
+# The same as the above, but using both cases Latin letter
+# [$a $A] *
+
+# Search for password consisting of digits only 
+# $1 *
+
+# Simpliest dictionary attack (to use it, uncomment $w definition 
+# in the dictionary definition part of this file
+# $w
+
+# More complex dictionary attack, with first letter in upper-case
+# $w.u(1)
+
+# Yet another dictionary attack, adding a digit after the word from
+# dictionary
+# $w $1
+
+# If you remember your password begins with "MyPass" and was
+# followed by 4-digit number
+# MyPass $1 $1 $1 $1
+
+# If you almost remember the whole password, but you
+# probably has mistyped it (let the password was "MyPass1234")
+# {MyPass1234}
+

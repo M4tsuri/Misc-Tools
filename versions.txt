@@ -1,0 +1,221 @@
+Changes in the versions:
+
+5.2a
+   - serious bug with stored files fixed (password was not found)
+
+5.2
+   - rar 3.0 rate is up to 30% faster on NVIDIA 9xx/1xxx
+   - CUDA version is obsolete because OpenCL speed is the same or better
+
+5.1
+   - 64-bit version, 32-bit is now obsolete. Up to 5-20% speed-up on
+different archive types.
+   - NVIDIA G80 (compute capability 1.x) no more supported.
+   - Intel GPU not supported until they fix the OpenCL drivers.
+   - rare bug with stored files and AESNI fixed.
+
+5.0b
+   - fixed some bugs with very long files and RAR 2.0 archives.
+
+5.0a
+  - NVIDIA Maxwell support
+
+5.0
+  - WinXP support fixed. But future WinXP support is not
+guaranteed.
+
+5.0 BETA 2
+  - Haswell AVX2 support, 2 times faster, CPU rate up to 4.80!
+  - Linking CUDA 5.5 surprisingly resulted in 30%-50% speed-up
+on Fermi and Kepler cards
+  - Intel HD grapichs OpenCL support
+
+5.0 BETA
+  - RAR 5.0 support and optimization for modern Intel,
+AMD and NVIDIA hardware
+  - no more crark and crark-hp files, all features is now
+in one program
+
+3.45
+  - -n option to specify GPU device number
+  - correct recognition of AMD APUs
+  - slightly faster XOP code
+  - old Pentium III/4 code removed
+  - RAR 5.x recongintion, no support yet
+
+3.43
+  - Kepler tuning
+  - GPU rate and grid size are calculated more
+accurately
+  - due to a lot of OpenCL compiler errors, the self
+test is included. (OpenCL version only)
+
+3.42
+  - better RAR 4.x compatibility
+  - OpenCL Mac OS X version
+
+3.41
+  - -d option is now available in OpenCL version
+  - fixed few (serious enough) bugs in cRARk-HP
+
+3.4e
+  - NVIDIA Kepler support (no optimization now, in fact
+GTX 680 is very bad in hash calculation)
+  - AMD GCN (Radeon 7xxx) speed-up about 25%
+  - yet more accurate CPU rate and SHA-1 clocks. Turn
+Turbo Boost off to get correct results!
+
+3.4d
+  - Bulldozer code fixed, now it works fine and it's
+the fastest code I ever seen (CPU rate > 3.0)!
+  - GPU grid sizes slightly changed
+  - seriuos bug in AMD OpenCL code fixed
+  - crash when running AVX code on non-AVX aware OS
+  
+3.4c
+  - hang with Catalyst 11.12 fixed
+
+3.4b
+  - at least 5-7% speed-up on Core 2/iX
+  - dictionary attack speed increased up to 20-40%
+  - more accurate and detailed CPU rate calculation
+
+3.4a
+  - AVX and XOP instructions support, at least 20% 
+speed-up on Sandy Bridge and Bulldozer
+
+3.4
+  - OpenCL BETA version, works on NVIDIA and AMD/ATI GPU
+  - up to 15% speed-up on G80 NVIDIA cards (CUDA version)
+  - stored files testing speed highly increased
+  - most stored files are now supported by GPU
+
+3.3d
+  - -d option fixed
+  - CUDA 4.0 compatibility added 
+
+3.3c
+  - "File rarcrypt.dll not found" bug fixed
+  - Upper/lower conversion for european languages changed,
+    now is working for Turkish alphabet (spanish.def is also
+    changed)
+
+3.3a,b
+  - Fermi (GTX 4xx) support and optimization.
+
+3.3
+  - CUDA engine totally rewritten, up to 5% faster;
+    it is also running more smoothly
+  - new -d option 
+
+3.25
+  - CUDA 3.0 linked which should fix some CUDA problems
+  - Core 2, Core iX slight optimizations, up to 5% faster
+  - RAR 2.0 few bugs fixed, -o option
+
+3.2c-d
+  - password was not found on GPU if charset > 128 chars
+
+3.2b
+  - support of SFX archives with encrypted headers
+
+3.2a
+  - 3-5% speed-up on both CPU and GPU code
+
+3.2
+  - 50% speed-up on GeForce 8xxx and 9xxx, more than 100% on GTX 2xx serie
+  - CUDA engine added in crark-hp
+  - several CUDA improvements and fixes
+
+3.2 BETA
+  - NVIDIA CUDA support added (only in brute-force mode)
+  - -c option to disable CUDA
+
+3.1c 
+  - significantly sped up on very large archives
+  - minor bug-fix of multivolume and encrypted headers archives
+    processing
+  - documentation corrected and converted to html
+  - Mac OS X version compiled
+  - new domain name crark.net
+
+3.1b
+  - Bugfix of false passwords in crark-hp again
+  - Linux version available 
+    http://www.password-crackers.com/DOWNLOAD/crark31-linux.tar.gz
+
+3.1a
+  - Bugfix in crark-hp (false passwords found)
+  - Limitation for password length (28 chars) due to SHA
+    implementation error in RAR 3.x
+  - New -f option for choosing crypto functions
+
+3.1
+  - Support archives with encrypted headers
+
+3.0a
+  - Core 2 optimization
+
+3.0
+  - RAR 3.0 support with Pentium III/4/AMD optimizations
+
+2.4
+  - Although RAR 2.x password cracking is not an actual problem,
+this upgrade is "just for fun". The brute-force rate is increased
+up to 25% on 3-chars (and longer) passwords and it is not depending
+of password length anymore. Thanks to Eugene D. Shelwien for his
+outstanding ideas.
+
+2.3b
+ - Just recompiling for P4. RAR 3.0 support is not expected now.
+
+2.3a
+ - Minor changes, about 5% speed-up. Documentation is improved. 
+
+2.3
+ - Pentium II optimized (2 times faster), CPU type identification,
+   -5, -6 options added. PCL updated, including printing password
+   in hex and "not defined .c(1)" bug fixed (thanks to Jan Polonsky).
+   -v option improved.
+
+2.2
+ - stored files support added. Linux (ELF) executable file added -
+maybe 5-10% faster.
+
+2.1a
+  - "5th line" bug in PCL 2.0 fixed. Only password definitions
+greather than 4 lines have been affected. Thanks to Dmitry Lisiy.
+
+2.1
+  - PCL v. 2.0 added. Thus, appeared: support of different languages
+and encodings, charset definition, new modifiers and their parameters,
+timing and benchmarking functions, maximal password length is
+now 255.
+
+
+2.0
+   - Password indication added (about 1 of 200000). Multimedia
+compressed files (-mm) bug fixed.
+
+1.99
+    - RAR 2.0 support is finally included. Older RAR versions are
+not supported.
+
+1.5a
+     - Library Password Cracking Library (PCL) v. 1.1 added,  al-
+lowing  multifunctional  dictionary  attacks,  brute force attack
+with known  symbols, recovery  of the  incorrectly typed password
+and much more. The bugr with small (less  than 10
+bytes)  files,  is  corrected.  Documentation is complemented and
+corrected.
+
+1.02
+     - Error, causing the result faulty in 0.5 % of the cases, is
+corrected. The speed is increased by 5 %.
+
+1.01
+    - Insignificant  error  in  an  initial code  UNRAR 1.01 (see
+what's new in RAR 2.0) is corrected
+
+1.00:
+    - First version released.
